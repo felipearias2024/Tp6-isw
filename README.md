@@ -1,4 +1,4 @@
-# Tp6-isw
+# tp6-isw
 
 ## Para levantar el proyecto en intellij:
   1. Ejecutar el comando mvn clean install para descargar todas las dependencias
