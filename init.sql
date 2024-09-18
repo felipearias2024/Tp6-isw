@@ -32,10 +32,11 @@ CREATE TABLE transportista (
     zona_cobertura TEXT
 );
 
-  INSERT INTO transportista (numero_documento, nombre, apellido, nombre_completo, email, zona_cobertura) VALUES
-('12345678', 'Juan', 'Pérez', 'Juan Pérez', 'juan.perez@example.com', '{"localidades":["Córdoba Capital","Villa Carlos Paz"]}'),
-('23456789', 'Ana', 'Gómez', 'Ana Gómez', 'ana.gomez@example.com', '{"localidades":["Villa María","San Francisco"]}'),
-('34567890', 'Luis', 'Martínez', 'Luis Martínez', 'luis.martinez@example.com', '{"localidades":["Rosario","Venado Tuerto","San Lorenzo"]}'),
-('45678901', 'Laura', 'Fernández', 'Laura Fernández', 'laura.fernandez@example.com', '{"localidades":["Santa Fe Capital","Reconquista"]}'),
-('56789012', 'Carlos', 'Lopez', 'Carlos Lopez', 'carlos.lopez@example.com', '{"localidades":["San Luis Capital","Villa Mercedes","Merlo"]}'),
-('67890123', 'Marta', 'Ruiz', 'Marta Ruiz', 'marta.ruiz@example.com', '{"localidades":["San Luis Capital","La Punta"]}');
+--version 2
+INSERT INTO transportista (numero_documento, nombre, apellido, nombre_completo, email, zona_cobertura) VALUES
+('12345678', 'Juan', 'Pérez', 'Juan Pérez', 'juan.perez@example.com', '{"provincia":["Buenos Aires"],"localidades":["La Plata","Mar del Plata","Tigre","San Fernando"]}'),
+('23456789', 'Ana', 'Gómez', 'Ana Gómez', 'ana.gomez@example.com', '{"provincia":["Santa Fe"], "localidades":["Funes","Granadero Baigorria","Roldán","San Lorenzo"]}'),
+('34567890', 'Luis', 'Martínez', 'Luis Martínez', 'fipo2024@gmail.com', '{"provincia":["Cordoba"], "localidades":["Córdoba Capital","Villa María","San Francisco","Villa Carlos Paz"]}'),
+('45678901', 'Laura', 'Fernández', 'Laura Fernández', 'laura.fernandez@example.com', '{"provincia":["Neuquen"], "localidades":["San Martín de los Andes","Zapala","Plottier","Neuquén Capital"]}'),
+('56789012', 'Carlos', 'Lopez', 'Carlos Lopez', 'carlos.lopez@example.com', '{"provincia":["Santa Fe"], "localidades":["Villa Gobernador Gálvez","Capitán Bermúdez","Fray Luis Beltrán","Arroyo Seco"]}'),
+('67890123', 'Marta', 'Ruiz', 'Marta Ruiz', 'marta.ruiz@example.com', '{"provincia":["Cordoba"], "localidades":["Río Cuarto","Alta Gracia","Cosquín","Jesús María"]}');
