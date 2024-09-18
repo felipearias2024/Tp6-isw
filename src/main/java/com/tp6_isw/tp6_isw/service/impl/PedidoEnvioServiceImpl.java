@@ -31,7 +31,6 @@ public class PedidoEnvioServiceImpl implements PedidoEnvioService {
     public void crearPedidoEnvio(PedidoEnvioRequest request){
         try{
             PedidoEnvio pedidoEnvio = PedidoEnvioParser.convertDomainToEntity(request);
-            validateDates(pedidoEnvio);
             repository.save(pedidoEnvio);
             notificarTransportistas(request);
         } catch (ParseException e) {
@@ -86,19 +85,7 @@ public class PedidoEnvioServiceImpl implements PedidoEnvioService {
             System.out.println("Correo enviado con éxito.");
 
         } catch (MessagingException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void validateDates(PedidoEnvio pedidoEnvio) {
-        if (pedidoEnvio.getFechaRetiro().before(new Date())){
-            throw new RuntimeException("La fecha de retiro no puede ser anterior al dia actual");
-        }
-        if (pedidoEnvio.getFechaEntrega().before(new Date())){
-            throw new RuntimeException("La fecha de entrega no puede ser anterior al dia actual");
-        }
-        if (pedidoEnvio.getFechaEntrega().before(pedidoEnvio.getFechaRetiro())){
-            throw new RuntimeException("La fecha de entrega no puede ser anterior a la fecha de retiro");
+            System.out.println("No hay transportistas disponibles para retirar y/o enviar el pedido.");
         }
     }
 }
